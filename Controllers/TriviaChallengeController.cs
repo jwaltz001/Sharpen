@@ -15,58 +15,42 @@ namespace Sharpen.Controllers
 
     public class TriviaChallengeController : Controller
     {
-        //static HttpClient client = new HttpClient();
-        //static async Task RunAsync()
-        //{
-        //    // Update port # in the following line.
-        //    client.BaseAddress = new Uri("http://jservice.io/api/");
-        //    client.DefaultRequestHeaders.Accept.Clear();
-        //    client.DefaultRequestHeaders.Accept.Add(
-        //        new MediaTypeWithQualityHeaderValue("application/json"));
-
-        //    try
-        //    {
-        //        TriviaChallenge triviaChallenge = new TriviaChallenge;
-        //        // Get the question object
-        //        triviaChallenge = await GetProductAsync("random");
-        //        //ShowProduct(product);
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Console.WriteLine(e.Message);
-        //    }
-        //}
-
-        //static async IAsyncEnumerable<TriviaChallenge> GetProductAsync()
-        //{
-        //    client.BaseAddress = new Uri("http://jservice.io/api/");
-        //    client.DefaultRequestHeaders.Accept.Clear();
-        //    client.DefaultRequestHeaders.Accept.Add(
-        //        new MediaTypeWithQualityHeaderValue("application/json"));
-
-            
-            //TriviaChallenge triviaChallenge = null;
-            //HttpResponseMessage response = await client.GetAsync("random");
-            //if (response.IsSuccessStatusCode)
-            //{
-                //List<TriviaChallenge> respArr = await response.Content.ReadAsAsync<List<TriviaChallenge>>();
-                //yield return respArr[0];
-            //}
-            
-        //}
-
         // GET: /<controller>/
-
-        public async Task<TriviaChallenge> Index()
+        TriviaChallenge triviaChallenge;
+        public async Task<TriviaChallenge> GetTrivia()
         {
             Console.WriteLine("Hello");
             HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync("http://jservice.io/api/random");
             List<TriviaChallenge> respArr = await response.Content.ReadAsAsync<List<TriviaChallenge>>();
-            TriviaChallenge triviaChallenge = respArr[0];
-            //ViewData["Question"] = triviaChallenge.question;
-            //ViewData["Category"] = triviaChallenge.category.title;
+            triviaChallenge = respArr[0];
             return triviaChallenge;
+        }
+
+            public async Task<IActionResult> Index()
+        {
+            await GetTrivia();
+            ViewData["Question"] = triviaChallenge.question;
+            ViewData["Value"] = triviaChallenge.value;
+            ViewData["Category"] = triviaChallenge.category.title;
+            ViewData["Answer"] = triviaChallenge.answer;
+            ViewData["Id"] = triviaChallenge.id;
+            return View();
+        }
+
+        public async Task<IActionResult> Answer(string playerAnswer, string answer)
+        {
+            ViewData["PlayerAnswer"] = playerAnswer;
+            ViewData["Answer"] = answer;
+            if (playerAnswer.ToLower() == answer.ToLower())
+            {
+                ViewData["Response"] = "You Got It!";
+            }
+            else
+            {
+                ViewData["Response"] = "You missed!";
+            }
+            return View();
         }
     }
 }

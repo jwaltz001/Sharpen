@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Answer Result";
+}
+
+<h2>@ViewData["Response"]</h2>
+<p>Your Answer: @ViewData["PlayerAnswer"]</p>
+<p>Correct Answer: @ViewData["Answer"]</p>
+
+<a asp-controller="TriviaChallenge" asp-action="Index">Continue On!</a>
+<a asp-controller="Home" asp-action="Main">Go Home</a>

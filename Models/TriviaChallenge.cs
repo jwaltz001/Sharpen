@@ -24,13 +24,4 @@ namespace Sharpen.Models
         public object invalid_count { get; set; }
         public Category category { get; set; }
     }
-
-    //public class TriviaChallenge
-    //{
-    //    public int Id { get; set; }
-    //    public string Answer { get; set; }
-    //    public string Question { get; set; }
-    //    public int Value { get; set; }
-    //    public int CategoryId { get; set; }
-    //}
 }

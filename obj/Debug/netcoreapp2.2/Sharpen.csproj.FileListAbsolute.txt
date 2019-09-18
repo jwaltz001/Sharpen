@@ -30,3 +30,4 @@
 /Users/justinwaltz/Projects/Sharpen/Sharpen/obj/Debug/netcoreapp2.2/Sharpen.pdb
 /Users/justinwaltz/Projects/Sharpen/Sharpen/obj/Debug/netcoreapp2.2/Sharpen.csproj.CopyComplete
 /Users/justinwaltz/Projects/Sharpen/Sharpen/obj/Debug/netcoreapp2.2/Razor/Views/TriviaChallenge/Index.g.cshtml.cs
+/Users/justinwaltz/Projects/Sharpen/Sharpen/obj/Debug/netcoreapp2.2/Razor/Views/TriviaChallenge/Answer.g.cshtml.cs
