@@ -42,8 +42,9 @@ namespace Sharpen.Controllers
         public async Task<IActionResult> Answer(string playerAnswer, string answer, string value, string xp)
         {
             int IntXp = Int32.Parse(xp);
-
-            if (playerAnswer.ToLower() == answer.ToLower())
+            string LcPlayerAns = playerAnswer.ToLower();
+            string LcCorrectAns = answer.ToLower();
+            if (LcCorrectAns.Contains(LcPlayerAns))
             {
                 ViewData["Response"] = "You Got It!";
                 IntXp += Int32.Parse(value);

@@ -21,7 +21,10 @@ namespace Sharpen.Controllers
         // GET: Players
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Player.ToListAsync());
+            var players = from p in _context.Player
+                         select p;
+            players = players.OrderByDescending(p => p.ExperiencePoints);
+            return View(await players.ToListAsync());
         }
 
         // GET: Players/Details/5
