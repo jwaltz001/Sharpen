@@ -31,3 +31,8 @@
 /Users/justinwaltz/Projects/Sharpen/Sharpen/obj/Debug/netcoreapp2.2/Sharpen.csproj.CopyComplete
 /Users/justinwaltz/Projects/Sharpen/Sharpen/obj/Debug/netcoreapp2.2/Razor/Views/TriviaChallenge/Index.g.cshtml.cs
 /Users/justinwaltz/Projects/Sharpen/Sharpen/obj/Debug/netcoreapp2.2/Razor/Views/TriviaChallenge/Answer.g.cshtml.cs
+/Users/justinwaltz/Projects/Sharpen/Sharpen/obj/Debug/netcoreapp2.2/Razor/Views/Players/Create.g.cshtml.cs
+/Users/justinwaltz/Projects/Sharpen/Sharpen/obj/Debug/netcoreapp2.2/Razor/Views/Players/Delete.g.cshtml.cs
+/Users/justinwaltz/Projects/Sharpen/Sharpen/obj/Debug/netcoreapp2.2/Razor/Views/Players/Details.g.cshtml.cs
+/Users/justinwaltz/Projects/Sharpen/Sharpen/obj/Debug/netcoreapp2.2/Razor/Views/Players/Edit.g.cshtml.cs
+/Users/justinwaltz/Projects/Sharpen/Sharpen/obj/Debug/netcoreapp2.2/Razor/Views/Players/Index.g.cshtml.cs

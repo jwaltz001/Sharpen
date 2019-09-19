@@ -14,6 +14,6 @@ namespace Sharpen.Models
         {
         }
 
-        public DbSet<Player> Players { get; set; }
+        public DbSet<Monster> Monsters { get; set; }
     }
 }

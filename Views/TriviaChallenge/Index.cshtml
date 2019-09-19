@@ -2,14 +2,18 @@
     ViewData["Title"] = "Challenge";
 }
 
+<h3>Your Current Xp: @ViewData["Xp"]</h3>
 <h2>Challenge!</h2>
 <p>@ViewData["Category"]</p>
 <p>@ViewData["Value"]</p>
 <p>@ViewData["Question"]</p>
+<p>Value:@ViewData["Value"]</p>
 
 <form asp-controller="TriviaChallenge" asp-action="Answer" method="get">
-        Your Answer: <input type="text" name="PlayerAnswer">
-        <input type="hidden" value='@ViewData["Answer"]' name="Answer" />
-        <input type="submit" value="Submit" />
+    <input type="hidden" value='@ViewData["Value"]' name="Value" />
+    Your Answer: <input type="text" name="PlayerAnswer">
+    <input type="hidden" value='@ViewData["Answer"]' name="Answer" />
+    <input type="hidden" value='@ViewData["Xp"]' name="Xp" />
+    <input type="submit" value="Submit" />
 </form>
 

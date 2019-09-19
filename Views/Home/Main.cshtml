@@ -4,4 +4,7 @@
 
 <h2>The main game page</h2>
 <p>This is where the game happens.</p>
-<a asp-controller="TriviaChallenge" asp-action="Index">Go Sharpen Your Skills</a>
+<form asp-controller="TriviaChallenge" asp-action="index">
+    <input type="hidden" value="0" name="Xp" />
+    <input type="submit" value="Start a Quest to Sharpen Your Skills!" class="btn btn-primary" />
+</form>

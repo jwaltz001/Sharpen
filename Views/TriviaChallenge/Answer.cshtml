@@ -1,10 +1,18 @@
 ﻿@{
     ViewData["Title"] = "Answer Result";
 }
-
+<h3>Your Current Xp: @ViewData["Xp"]</h3>
 <h2>@ViewData["Response"]</h2>
 <p>Your Answer: @ViewData["PlayerAnswer"]</p>
 <p>Correct Answer: @ViewData["Answer"]</p>
 
-<a asp-controller="TriviaChallenge" asp-action="Index">Continue On!</a>
-<a asp-controller="Home" asp-action="Main">Go Home</a>
+<form asp-controller="TriviaChallenge" asp-action="index">
+    <input type="hidden" value='@ViewData["Xp"]' name="Xp" />
+    <input type="submit" value="Onward! Ever Stalward!" class="btn btn-primary" />
+</form>
+<a asp-controller="Home" asp-action="Main"></a>
+
+<form asp-controller="Players" asp-action="Create" method="get">
+    <input type="hidden" value='@ViewData["Xp"]' name="Xp" />
+    <input type="submit" value="Stop Your Quest Here." class="btn btn-primary" />
+</form>

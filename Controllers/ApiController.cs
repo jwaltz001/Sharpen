@@ -12,60 +12,60 @@ namespace Sharpen.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PlayerController : ControllerBase
+    public class MonsterController : ControllerBase
     {
         private readonly ApiContext _context;
 
-        public PlayerController(ApiContext context)
+        public MonsterController(ApiContext context)
         {
             _context = context;
 
-            if (_context.Players.Count() == 0)
+            if (_context.Monsters.Count() == 0)
             {
-                _context.Players.Add(new Player { Name = "Player 1" });
+                _context.Monsters.Add(new Monster { Name = "Monster 1" });
                 _context.SaveChanges();
             }
         }
 
-        //GET api/Player
-        public async Task<ActionResult<IEnumerable<Player>>> GetPlayers()
+        //GET api/Monster
+        public async Task<ActionResult<IEnumerable<Monster>>> GetMonsters()
         {
-            return await _context.Players.ToListAsync();
+            return await _context.Monsters.ToListAsync();
         }
 
-        //GET api/Player/:id
+        //GET api/Monster/:id
 		[HttpGet("{id}")]
-        public async Task<ActionResult<Player>> GetPlayer(int id)
+        public async Task<ActionResult<Monster>> GetMonster(int id)
         {
-            var player = await _context.Players.FindAsync(id);
-            if (player == null)
+            var monster = await _context.Monsters.FindAsync(id);
+            if (monster == null)
             {
                 return NotFound();
             }
 
-            return player;
+            return monster;
         }
 
-        // POST: api/Player
+        // POST: api/Monster
 		[HttpPost]
-		public async Task<ActionResult<Player>> PostPlayer(Player player)
+		public async Task<ActionResult<Monster>> PostMonster(Monster monster)
 		{
-			_context.Players.Add(player);
+			_context.Monsters.Add(monster);
 			await _context.SaveChangesAsync();
 
-			return CreatedAtAction(nameof(GetPlayer), new { id = player.Id }, player);
+			return CreatedAtAction(nameof(GetMonster), new { id = monster.Id }, monster);
 		}
 
 		// PUT: api/Todo/:id
 		[HttpPut("{id}")]
-		public async Task<IActionResult> PutPlayer(int id, Player player)
+		public async Task<IActionResult> PutMonster(int id, Monster monster)
 		{
-			if (id != player.Id)
+			if (id != monster.Id)
 			{
 				return BadRequest();
 			}
 
-			_context.Entry(player).State = EntityState.Modified;
+			_context.Entry(monster).State = EntityState.Modified;
 			await _context.SaveChangesAsync();
 
 			return NoContent();
@@ -73,16 +73,16 @@ namespace Sharpen.Controllers
 
         // DELETE: api/Todo/:id
 		[HttpDelete("{id}")]
-		public async Task<IActionResult> DeletePlayer(int id)
+		public async Task<IActionResult> DeleteMonster(int id)
 		{
-			var player = await _context.Players.FindAsync(id);
+			var monster = await _context.Monsters.FindAsync(id);
 
-			if (player == null)
+			if (monster == null)
 			{
 				return NotFound();
 			}
 
-			_context.Players.Remove(player);
+			_context.Monsters.Remove(monster);
 			await _context.SaveChangesAsync();
 
 			return NoContent();

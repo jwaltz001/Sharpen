@@ -19,7 +19,6 @@ namespace Sharpen.Controllers
         TriviaChallenge triviaChallenge;
         public async Task<TriviaChallenge> GetTrivia()
         {
-            Console.WriteLine("Hello");
             HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync("http://jservice.io/api/random");
             List<TriviaChallenge> respArr = await response.Content.ReadAsAsync<List<TriviaChallenge>>();
@@ -27,30 +26,37 @@ namespace Sharpen.Controllers
             return triviaChallenge;
         }
 
-            public async Task<IActionResult> Index()
+            public async Task<IActionResult> Index(string xp)
         {
             await GetTrivia();
             ViewData["Question"] = triviaChallenge.question;
             ViewData["Value"] = triviaChallenge.value;
             ViewData["Category"] = triviaChallenge.category.title;
             ViewData["Answer"] = triviaChallenge.answer;
-            ViewData["Id"] = triviaChallenge.id;
+            ViewData["Xp"] = xp;
             return View();
         }
 
-        public async Task<IActionResult> Answer(string playerAnswer, string answer)
+        
+
+        public async Task<IActionResult> Answer(string playerAnswer, string answer, string value, string xp)
         {
-            ViewData["PlayerAnswer"] = playerAnswer;
-            ViewData["Answer"] = answer;
+            int IntXp = Int32.Parse(xp);
+
             if (playerAnswer.ToLower() == answer.ToLower())
             {
                 ViewData["Response"] = "You Got It!";
+                IntXp += Int32.Parse(value);
             }
             else
             {
                 ViewData["Response"] = "You missed!";
             }
+            ViewData["PlayerAnswer"] = playerAnswer;
+            ViewData["Answer"] = answer;
+            ViewData["Xp"] = IntXp;
             return View();
+
         }
     }
 }
