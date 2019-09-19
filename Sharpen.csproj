@@ -19,5 +19,6 @@
 
   <ItemGroup>
     <Folder Include="Views\TriviaChallenge\" />
+    <Folder Include="images\" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,23 @@
+﻿body {
+    background: Green;
+}
+h1, h2 {
+    font-family: 'Press Start 2P', cursive;
+}
+a, button, input {
+    font-family: 'Turret Road', cursive;
+}
+p, table {
+    font-family: 'Economica', sans-serif;
+    font-size: 24pt;
+}
+
+.highscore-table {
+
+}
+
+/*
+font-family: 'Turret Road', cursive;
+font-family: 'Economica', sans-serif;
+font-family: 'Press Start 2P', cursive;
+*/
