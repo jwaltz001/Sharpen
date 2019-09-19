@@ -19,6 +19,12 @@
 
   <ItemGroup>
     <Folder Include="Views\TriviaChallenge\" />
-    <Folder Include="images\" />
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\images\Heroine04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\images\Heroine04.png" />
   </ItemGroup>
 </Project>

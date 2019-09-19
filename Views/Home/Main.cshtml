@@ -1,10 +1,22 @@
 ﻿@{
     ViewData["Title"] = "Main";
 }
-
-<h2>The Sharpen Questing Guild</h2>
-<p>Welcome traveller! Its good to see new, brave souls that are willing to sharopen their wits on our adventures. No time to waste!</p>
-<form asp-controller="TriviaChallenge" asp-action="index">
-    <input type="hidden" value="0" name="Xp" />
-    <input type="submit" value="Start a Quest to Sharpen Your Skills!" class="btn btn-primary" />
-</form>
+<div class="row">
+    <div class="col-sm-12 col-lg-8 sign-div">
+        <h2 class="sign-text">The Sharpen Questing Guild</h2>
+    </div>
+    <div class="col-4">
+        <p class="welcome-text">Welcome traveller!
+        <br/> Its good to see new, brave souls that are willing to sharpen their wits on our adventures.
+        <br/> No time to waste!</p>
+        <img src="@Url.Content("~/images/Heroine04(2).png")" class="hero-img" />
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-sm-12">
+        <form asp-controller="TriviaChallenge" asp-action="index">
+            <input type="hidden" value="0" name="Xp" />
+            <input type="submit" value="Start a Quest to Sharpen Your Skills!" class="btn btn-primary" />
+        </form>
+    </div>
+    </div>
