@@ -27,4 +27,11 @@
   <ItemGroup>
     <None Include="wwwroot\images\Heroine04.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Models\ApiContext.cs" />
+    <Compile Remove="Models\Monster.cs" />
+    <Compile Remove="Controllers\ApiController.cs" />
+    <Compile Remove="Migrations\20190917221102_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\ApiContextModelSnapshot.cs" />
+  </ItemGroup>
 </Project>

@@ -35,8 +35,8 @@ namespace Sharpen
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<ApiContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("ApiContext")));
+            //services.AddDbContext<ApiContext>(options =>
+            //    options.UseSqlite(Configuration.GetConnectionString("ApiContext")));
 
             services.AddDbContext<PlayerContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("PlayerContext")));
