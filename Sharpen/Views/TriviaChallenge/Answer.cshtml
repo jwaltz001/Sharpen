@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Answer Result";
+}
+<div class="row mt-5">
+    <h2 class="col-8">@ViewData["Response"]</h2>
+    <h3>Your Current Xp: @ViewData["Xp"]</h3>
+    <img src="@Url.Content("~/images/Heroine04(3).png")" class="hero-img" />
+</div>
+    <p>Your Answer: @ViewData["PlayerAnswer"]</p>
+    <p>Correct Answer: @ViewData["Answer"]</p>
+<div class="row mt-5">
+    <div class="col">
+        <form asp-controller="TriviaChallenge" asp-action="index">
+            <input type="hidden" value='@ViewData["Xp"]' name="Xp" />
+            <input type="submit" value="Onward! Ever Stalwart!" class="btn btn-primary" />
+        </form>
+    </div>
+    <div class="col">
+        <form asp-controller="Players" asp-action="Create" method="get">
+            <input type="hidden" value='@ViewData["Xp"]' name="Xp" />
+            <input type="submit" value="Stop Your Quest Here." class="btn btn-danger" />
+        </form>
+    </div>
+</div>

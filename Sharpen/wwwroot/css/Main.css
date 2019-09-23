@@ -1,0 +1,72 @@
+﻿body {
+    background: Green;
+}
+header {
+    background: lightgrey;
+    border-bottom: 5pt solid darkgrey;
+}
+footer {
+    background: white;
+}
+h1, h2 {
+    font-family: 'Press Start 2P', cursive;
+}
+a, button, input {
+    font-family: 'Turret Road', cursive;
+}
+span {
+    margin-left: 2em;
+}
+h3, p, table, label {
+    font-family: 'Economica', sans-serif;
+}
+p, table, label {
+    font-size: 24pt;
+}
+
+.nav-link, .btn {
+    font-size: 20pt;
+}
+.btn {
+    padding: 1em;
+}
+.hero-img {
+    margin: 1em;
+}
+.sign-div {
+    display: flex;
+    background-image: url("/images/pixil-frame-0.png");
+    background-repeat: no-repeat;
+    height: 600px;
+}
+.guild-sign {
+    position: relative;
+    z-index: -1;
+}
+.sign-text {
+    text-align: center;
+    width: 500px;
+    line-height: 2;
+    font-size: 32pt;
+    margin-top: 155px;
+    margin-left: 50px;
+}
+.welcome-text {
+    margin-top: 100px;
+    background: white;
+    border: 2pt solid black;
+    padding: 5pt;
+    border-radius: 5pt;
+}
+.back-link{
+    color: black;
+    font-size: 16pt;
+}
+/*
+font-family: 'Turret Road', cursive;
+font-family: 'Economica', sans-serif;
+font-family: 'Press Start 2P', cursive;
+.highscore-table {
+
+}
+*/

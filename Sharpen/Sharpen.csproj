@@ -12,6 +12,27 @@
       <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SQLite" Version="2.2.6" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\TriviaChallenge\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\images\Heroine04.png" />
+    <Content Remove="wwwroot\images\Heroine04%281%29.png" />
+    <Content Remove="wwwroot\images\.DS_Store" />
+    <Content Remove="wwwroot\images\pixil-frame-0.png" />
+    <Content Remove="wwwroot\images\Heroine04%283%29.png" />
+    <Content Remove="wwwroot\images\Heroine04%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Models\ApiContext.cs" />
+    <Compile Remove="Models\Monster.cs" />
+    <Compile Remove="Controllers\ApiController.cs" />
+    <Compile Remove="Migrations\20190917221102_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\ApiContextModelSnapshot.cs" />
+  </ItemGroup>
 </Project>
