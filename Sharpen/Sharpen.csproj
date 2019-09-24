@@ -19,14 +19,15 @@
 
   <ItemGroup>
     <Folder Include="Views\TriviaChallenge\" />
+    <Folder Include="wwwroot\AppData\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Remove="wwwroot\images\Heroine04.png" />
     <Content Remove="wwwroot\images\Heroine04%281%29.png" />
     <Content Remove="wwwroot\images\.DS_Store" />
     <Content Remove="wwwroot\images\pixil-frame-0.png" />
     <Content Remove="wwwroot\images\Heroine04%283%29.png" />
     <Content Remove="wwwroot\images\Heroine04%282%29.png" />
+    <Content Remove="wwwroot\AppData\Sharpen.db" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\ApiContext.cs" />
@@ -34,5 +35,11 @@
     <Compile Remove="Controllers\ApiController.cs" />
     <Compile Remove="Migrations\20190917221102_InitialCreate.Designer.cs" />
     <Compile Remove="Migrations\ApiContextModelSnapshot.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Sharpen.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\AppData\Sharpen.db" />
   </ItemGroup>
 </Project>
